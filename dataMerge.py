@@ -51,6 +51,8 @@ new = df_traffic[ 'limits' ].str.split( ' - ', n = 1, expand = True)
 df_traffic[ 'limit_1' ] = new[ 0 ]
 df_traffic[ 'limit_2' ] = new[ 1 ]
 df_traffic.drop( columns = "limits", inplace = True )
+#df2 can be used to find lat and long coordinates
+df2 = df_traffic.groupby( [ 'street_name', 'limit_1', 'limit_2' ]).agg({ 'total_count' : 'sum' })
 df_traffic.dropna( inplace = True )
 
 df_meters.drop( columns = "area", inplace = True )
