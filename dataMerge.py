@@ -46,7 +46,7 @@ df_traffic.drop( columns = "southbound_count", inplace = True )
 df_traffic.drop( columns = "eastbound_count", inplace = True )
 df_traffic.drop( columns = "westbound_count", inplace = True )
 df_traffic.drop( columns = "file_no", inplace = True )
-df_traffic.drop( columdns = "count_date", inplace = True )
+df_traffic.drop( columns = "count_date", inplace = True )
 new = df_traffic[ 'limits' ].str.split( ' - ', n = 1, expand = True) 
 df_traffic[ 'limit_1' ] = new[ 0 ]
 df_traffic[ 'limit_2' ] = new[ 1 ]
